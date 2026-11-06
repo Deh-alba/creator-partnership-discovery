@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Partnership Discovery – Revolve Group, Inc.</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #333; }
+    header { background: #1a1a2e; color: #fff; padding: 24px 16px; text-align: center; }
+    header h1 { font-size: 1.6rem; font-weight: 600; }
+    header p { margin: 6px auto 0; max-width: 640px; font-size: 0.9rem; line-height: 1.5; opacity: 0.85; }
+    .header-links { margin-top: 12px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; font-size: 0.85rem; }
+    .header-links a { color: #c7d2fe; }
+    main { max-width: 960px; margin: 32px auto; padding: 0 16px 60px; }
+    section { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    h2 { font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 12px; border-left: 3px solid #4f46e5; padding-left: 12px; }
+    h3 { font-size: 1rem; font-weight: 600; color: #1a1a2e; margin: 18px 0 8px; }
+    p, li, td, th, dd, dt { font-size: 0.95rem; line-height: 1.6; color: #555; }
+    p + p { margin-top: 8px; }
+    .muted { color: #6b7280; }
+    .small { font-size: 0.82rem; }
+    a { color: #4f46e5; text-decoration: none; overflow-wrap: anywhere; }
+    a:hover { text-decoration: underline; }
+    footer { text-align: center; font-size: 0.82rem; color: #999; padding: 20px; }
+    footer p { font-size: inherit; color: inherit; }
+    footer p + p { margin-top: 4px; }
+    :focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+
+    button { font: inherit; font-size: 0.95rem; font-weight: 600; background: #4f46e5; color: #fff; border: 1px solid #4f46e5; border-radius: 6px; padding: 10px 18px; cursor: pointer; }
+    button:hover:not(:disabled) { background: #4338ca; border-color: #4338ca; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    button.secondary { background: #fff; color: #4f46e5; border-color: #c7d2fe; }
+    button.secondary:hover:not(:disabled) { background: #eef2ff; border-color: #a5b4fc; }
+    button.small { padding: 6px 12px; font-size: 0.85rem; }
+    button.busy::before { content: ''; display: inline-block; width: 0.9em; height: 0.9em; margin-right: 0.5em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; vertical-align: -0.12em; animation: spin 0.7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    label { display: block; font-size: 0.82rem; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    input, select { font: inherit; font-size: 0.95rem; width: 100%; padding: 9px 10px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; color: #333; }
+    .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 14px; margin-top: 14px; }
+    .form-actions { margin-top: 16px; }
+    .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+    .inline-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; margin-top: 14px; }
+    .inline-form .field { flex: 1 1 220px; }
+
+    .error { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; border-radius: 6px; padding: 12px 14px; font-size: 0.9rem; line-height: 1.5; margin-top: 14px; overflow-wrap: anywhere; }
+    .notice { background: #eef2ff; border: 1px solid #c7d2fe; color: #3730a3; border-radius: 6px; padding: 12px 14px; font-size: 0.9rem; line-height: 1.5; margin-top: 14px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 14px; margin-top: 14px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px; background: #fff; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+    .card-head { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .card-title { font-weight: 600; color: #1a1a2e; font-size: 0.95rem; overflow-wrap: anywhere; }
+    .avatar { position: relative; flex: 0 0 auto; width: 48px; height: 48px; border-radius: 50%; background: #e0e7ff; color: #4f46e5; display: flex; align-items: center; justify-content: center; font-weight: 600; overflow: hidden; }
+    .avatar.large { width: 72px; height: 72px; font-size: 1.4rem; }
+    .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .badge { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; font-size: 0.72rem; font-weight: 600; vertical-align: 1px; }
+    .badge.neutral { background: #e5e7eb; color: #374151; margin-left: 0; }
+    .facts { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; }
+    .facts dt { color: #6b7280; font-size: 0.82rem; }
+    .facts dd { font-size: 0.88rem; overflow-wrap: anywhere; }
+    .stats { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.85rem; color: #555; }
+    .stats b { color: #1a1a2e; }
+    .caption { font-size: 0.85rem; color: #555; line-height: 1.5; overflow-wrap: anywhere; }
+
+    .profile { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-top: 14px; }
+    .profile-body { flex: 1 1 240px; min-width: 0; }
+    .profile-body .bio { margin-top: 6px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.9rem; }
+
+    .detail { margin-top: 18px; padding-top: 4px; border-top: 1px solid #e5e7eb; }
+    .detail ul { padding-left: 20px; }
+    .table-wrap { overflow-x: auto; margin-top: 6px; border: 1px solid #e5e7eb; border-radius: 6px; }
+    table { border-collapse: collapse; width: 100%; min-width: 480px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #f0f0f0; white-space: nowrap; }
+    th { background: #f9fafb; color: #1a1a2e; font-weight: 600; font-size: 0.82rem; }
+    tr:last-child td { border-bottom: 0; }
+    details { margin-top: 16px; }
+    summary { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: #4f46e5; }
+    pre { margin-top: 8px; background: #111827; color: #e5e7eb; padding: 12px; border-radius: 6px; font-size: 0.78rem; line-height: 1.5; overflow-x: auto; max-height: 420px; }
+    .user-line { font-size: 0.95rem; }
+    .user-line strong { color: #1a1a2e; }
+
+    @media (max-width: 480px) {
+      section { padding: 20px 16px; }
+      header h1 { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Creator Partnership Discovery</h1>
+  <p>Internal tool for the Revolve influencer-marketing team to discover creators and review public content performance.</p>
+  <nav class="header-links" aria-label="Legal">
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms of Service</a>
+    <a href="../data-deletion.html">Data Deletion</a>
+  </nav>
+</header>
+
+<main>
+  <noscript><section><p>This demo requires JavaScript.</p></section></noscript>
+
+  <section id="authSection" aria-labelledby="authTitle">
+    <h2 id="authTitle">Connect your account</h2>
+    <div id="loggedOut">
+      <p class="muted">Sign in with Facebook so the tool can read the Instagram professional account linked to a Facebook Page you manage. Results are shown in your browser only and are not saved by this demo.</p>
+      <div class="row" style="margin-top:14px">
+        <button type="button" id="loginBtn" disabled>Continue with Facebook</button>
+        <span id="sdkStatus" class="muted small" role="status">Loading Facebook SDK&hellip;</span>
+      </div>
+    </div>
+    <div id="loggedIn" hidden>
+      <div class="row">
+        <p class="user-line">Signed in as <strong id="userName">&hellip;</strong></p>
+        <button type="button" id="logoutBtn" class="secondary small">Log out</button>
+      </div>
+      <div id="pagePicker" style="margin-top:14px" hidden>
+        <label for="pageSelect">Facebook Page (with a linked Instagram professional account)</label>
+        <select id="pageSelect"></select>
+      </div>
+      <p id="pageNote" class="muted small" style="margin-top:10px" role="status"></p>
+    </div>
+    <div id="authError" hidden role="alert"></div>
+  </section>
+
+  <section id="sectionA" aria-labelledby="titleA" hidden>
+    <h2 id="titleA">A. Find creators (Instagram Creator Marketplace)</h2>
+    <p class="muted">Search the Instagram Creator Marketplace for creators who could be a fit for a Revolve brand partnership.</p>
+    <form id="formA" novalidate>
+      <div class="form-grid">
+        <div>
+          <label for="keyword">Keyword (optional)</label>
+          <input type="text" id="keyword" maxlength="100" autocomplete="off" placeholder="e.g. summer style">
+        </div>
+        <div>
+          <label for="country">Creator country</label>
+          <select id="country">
+            <option value="US" selected>United States (US)</option>
+            <option value="GB">United Kingdom (GB)</option>
+            <option value="CA">Canada (CA)</option>
+            <option value="AU">Australia (AU)</option>
+            <option value="BR">Brazil (BR)</option>
+            <option value="FR">France (FR)</option>
+            <option value="DE">Germany (DE)</option>
+            <option value="IT">Italy (IT)</option>
+            <option value="ES">Spain (ES)</option>
+          </select>
+        </div>
+        <div>
+          <label for="interest">Interest</label>
+          <select id="interest">
+            <option value="" selected>None</option>
+            <option value="FASHION">Fashion</option>
+            <option value="BEAUTY">Beauty</option>
+            <option value="FITNESS_AND_WORKOUTS">Fitness and workouts</option>
+            <option value="SPORTS">Sports</option>
+          </select>
+        </div>
+        <div>
+          <label for="minFollowers">Minimum followers</label>
+          <select id="minFollowers">
+            <option value="0" selected>No minimum</option>
+            <option value="10000">10,000</option>
+            <option value="25000">25,000</option>
+            <option value="50000">50,000</option>
+            <option value="75000">75,000</option>
+            <option value="100000">100,000</option>
+            <option value="250000">250,000</option>
+            <option value="1000000">1,000,000</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions"><button type="submit" id="searchBtn">Search creators</button></div>
+    </form>
+    <div id="errorA" hidden role="alert"></div>
+    <div id="resultsA" aria-live="polite"></div>
+    <div id="detailA" aria-live="polite"></div>
+  </section>
+
+  <section id="sectionB" aria-labelledby="titleB" hidden>
+    <h2 id="titleB">B. Creator profile lookup (Business Discovery)</h2>
+    <p class="muted">Look up the public profile and the 12 most recent posts of an Instagram professional account to review content performance.</p>
+    <form id="formB" class="inline-form" novalidate>
+      <div class="field">
+        <label for="lookupUser">Instagram username</label>
+        <input type="text" id="lookupUser" maxlength="31" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@username">
+      </div>
+      <button type="submit" id="lookupBtn">Look up profile</button>
+    </form>
+    <div id="errorB" hidden role="alert"></div>
+    <div id="resultsB" aria-live="polite"></div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Revolve Group, Inc. All rights reserved.</p>
+  <p><a href="../privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="../terms.html">Terms of Service</a> &nbsp;|&nbsp; <a href="../data-deletion.html">Data Deletion</a></p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var APP_ID = '1636719200768068';
+  var CONFIG_ID = '986815303902592';
+  var GRAPH_VERSION = 'v24.0';
+  var USERNAME_RE = /^[A-Za-z0-9._]{1,30}$/;
+  var NUMERIC_ID_RE = /^[0-9]+$/;
+
+  var LIST_FIELDS = 'username,id,country,gender,age_bucket,is_account_verified,onboarded_status,category,profile_picture_url,insights.metrics(total_followers)';
+  var DETAIL_FIELDS = 'username,has_brand_partnership_experience,past_brand_partnership_partners,insights.metrics(total_followers,creator_engaged_accounts,creator_reach).period(overall).time_range(this_month).breakdown(top_countries),branded_content_media{id,creation_time,tagged_brand,likes,comments,views,permalink}';
+  var MEDIA_FIELDS = 'id,timestamp,caption,like_count,comments_count,view_count,media_type,media_product_type,permalink';
+
+  // ---- State. The Page access token lives ONLY in this closure (never shown, logged or persisted). ----
+  var pageToken = null;
+  var pages = [];
+  var selected = null;
+  var session = 0;       // bumped on login/logout so stale async responses are ignored
+  var sdkReady = false;
+
+  // ---- DOM ----
+  function $(id) { return document.getElementById(id); }
+  var loginBtn = $('loginBtn'), logoutBtn = $('logoutBtn'), sdkStatus = $('sdkStatus');
+  var loggedOut = $('loggedOut'), loggedIn = $('loggedIn'), userName = $('userName');
+  var pagePicker = $('pagePicker'), pageSelect = $('pageSelect'), pageNote = $('pageNote');
+  var authError = $('authError');
+  var sectionA = $('sectionA'), formA = $('formA'), searchBtn = $('searchBtn');
+  var errorA = $('errorA'), resultsA = $('resultsA'), detailA = $('detailA');
+  var sectionB = $('sectionB'), formB = $('formB'), lookupBtn = $('lookupBtn');
+  var errorB = $('errorB'), resultsB = $('resultsB'), lookupUser = $('lookupUser');
+
+  // Safe element builder: strings become text nodes / textContent, never HTML.
+  function h(tag, props, children) {
+    var node = document.createElement(tag);
+    if (props) {
+      Object.keys(props).forEach(function (k) {
+        var v = props[k];
+        if (v === null || v === undefined || v === false) return;
+        if (k === 'class') node.className = v;
+        else if (k === 'text') node.textContent = v;
+        else node.setAttribute(k, v === true ? '' : String(v));
+      });
+    }
+    [].concat(children === undefined ? [] : children).forEach(function (c) {
+      if (c === null || c === undefined || c === false) return;
+      node.appendChild(typeof c === 'object' ? c : document.createTextNode(String(c)));
+    });
+    return node;
+  }
+  function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+  // ---- Value helpers ----
+  function isBlank(v) { return v === null || v === undefined || v === ''; }
+  function toText(v) {
+    if (isBlank(v)) return '';
+    if (Array.isArray(v)) return v.map(toText).filter(Boolean).join(', ');
+    if (typeof v === 'object') {
+      var n = v.name || v.username || v.title || v.id;
+      return n ? toText(n) : JSON.stringify(v);
+    }
+    return String(v);
+  }
+  function humanize(v) {
+    var s = toText(v).replace(/_/g, ' ').toLowerCase();
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  function fmtNum(v) {
+    if (isBlank(v) || typeof v === 'object') return '';
+    var n = Number(v);
+    return isFinite(n) ? n.toLocaleString('en-US') : String(v);
+  }
+  function fmtDate(v) {
+    if (isBlank(v)) return '';
+    var d;
+    if (typeof v === 'number' || /^[0-9]{9,13}$/.test(String(v))) {
+      var n = Number(v);
+      d = new Date(n < 1e11 ? n * 1000 : n);
+    } else {
+      d = new Date(String(v).replace(/([+-][0-9]{2})([0-9]{2})$/, '$1:$2'));
+    }
+    return isNaN(d.getTime()) ? String(v) : d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+  function excerpt(s, max) {
+    var t = toText(s).replace(/\s+/g, ' ').trim();
+    return t.length > max ? t.slice(0, max - 1).trimEnd() + '…' : t;
+  }
+  function asList(v) {
+    if (Array.isArray(v)) return v;
+    if (v && typeof v === 'object' && Array.isArray(v.data)) return v.data;
+    return isBlank(v) ? [] : [v];
+  }
+  function safeUrl(u) {
+    if (typeof u !== 'string') return null;
+    try { var x = new URL(u); return x.protocol === 'https:' ? x.href : null; } catch (e) { return null; }
+  }
+  function extLink(url, label) {
+    var href = safeUrl(url);
+    return href ? h('a', { href: href, target: '_blank', rel: 'noopener noreferrer', text: label }) : document.createTextNode('—');
+  }
+  function normalizeUsername(raw) {
+    var u = String(raw || '').trim().replace(/^@/, '');
+    return USERNAME_RE.test(u) ? u : null;
+  }
+  function countryName(code) {
+    var label = String(code);
+    if (/^[A-Z]{2}$/.test(label)) {
+      try {
+        var n = new Intl.DisplayNames(['en'], { type: 'region' }).of(label);
+        if (n && n !== label) return n + ' (' + label + ')';
+      } catch (e) { /* fall through */ }
+    }
+    return label;
+  }
+  // JSON for the raw view: never include any access_token key.
+  function prettyJson(obj) {
+    return JSON.stringify(obj, function (k, v) { return k === 'access_token' ? '[redacted]' : v; }, 2);
+  }
+
+  // ---- Errors & loading ----
+  function errorBox(err) {
+    var msg = err && err.message ? String(err.message) : 'Unexpected error.';
+    var bits = [];
+    if (err && !isBlank(err.code)) bits.push('code ' + err.code);
+    if (err && !isBlank(err.error_subcode)) bits.push('subcode ' + err.error_subcode);
+    return h('div', { class: 'error', role: 'alert' }, [
+      h('strong', { text: 'Error: ' }), msg, bits.length ? ' (' + bits.join(', ') + ')' : ''
+    ]);
+  }
+  function renderError(container, err) {
+    clear(container);
+    container.appendChild(errorBox(err));
+    container.hidden = false;
+  }
+  function clearError(container) { clear(container); container.hidden = true; }
+  function setBusy(btn, busy, text) {
+    if (busy) {
+      if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.textContent);
+      btn.textContent = text;
+      btn.disabled = true;
+      btn.classList.add('busy');
+      btn.setAttribute('aria-busy', 'true');
+    } else {
+      if (btn.getAttribute('data-label')) { btn.textContent = btn.getAttribute('data-label'); btn.removeAttribute('data-label'); }
+      btn.disabled = false;
+      btn.classList.remove('busy');
+      btn.removeAttribute('aria-busy');
+    }
+  }
+
+  // ---- Graph API wrapper (promise around FB.api; no logging anywhere) ----
+  function graph(path, params) {
+    return new Promise(function (resolve, reject) {
+      if (!sdkReady || !window.FB) { reject({ message: 'The Facebook SDK is not loaded yet.' }); return; }
+      try {
+        FB.api(path, 'GET', params || {}, function (res) {
+          if (!res) reject({ message: 'Empty response from the Graph API.' });
+          else if (res.error) reject(res.error);
+          else resolve(res);
+        });
+      } catch (e) {
+        reject({ message: e && e.message ? e.message : 'Request failed.' });
+      }
+    });
+  }
+
+  // ---- Facebook SDK ----
+  window.fbAsyncInit = function () {
+    FB.init({ appId: APP_ID, cookie: false, xfbml: false, version: GRAPH_VERSION });
+    sdkReady = true;
+    loginBtn.disabled = false;
+    sdkStatus.textContent = '';
+  };
+  (function loadSdk() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.defer = true;
+    s.crossOrigin = 'anonymous';
+    s.src = 'https://connect.facebook.net/en_US/sdk.js';
+    s.onerror = function () {
+      sdkStatus.textContent = '';
+      renderError(authError, { message: 'The Facebook SDK could not be loaded. Check your connection or disable content blockers for this page, then reload.' });
+    };
+    document.head.appendChild(s);
+  })();
+
+  // ---- Login / logout ----
+  loginBtn.addEventListener('click', function () {
+    if (!sdkReady) return;
+    clearError(authError);
+    var sid = ++session;
+    setBusy(loginBtn, true, 'Waiting for Facebook…');
+    FB.login(function (response) {
+      if (sid !== session) return;
+      if (!response || !response.authResponse) {
+        setBusy(loginBtn, false);
+        renderError(authError, { message: 'Login was cancelled or not completed.' });
+        return;
+      }
+      onLoggedIn(sid);
+    }, { config_id: CONFIG_ID });
+  });
+
+  logoutBtn.addEventListener('click', function () {
+    session++;
+    resetUi();
+    try { FB.logout(function () {}); } catch (e) { /* already logged out */ }
+  });
+
+  function resetUi() {
+    pageToken = null;
+    pages = [];
+    selected = null;
+    clear(pageSelect);
+    pageNote.textContent = '';
+    pagePicker.hidden = true;
+    userName.textContent = '…';
+    clearError(authError);
+    clearAreas();
+    sectionA.hidden = true;
+    sectionB.hidden = true;
+    formA.reset();
+    formB.reset();
+    setBusy(loginBtn, false);
+    setBusy(searchBtn, false);
+    setBusy(lookupBtn, false);
+    loggedIn.hidden = true;
+    loggedOut.hidden = false;
+  }
+  function clearAreas() {
+    clearError(errorA); clear(resultsA); clear(detailA);
+    clearError(errorB); clear(resultsB);
+  }
+
+  async function onLoggedIn(sid) {
+    loggedOut.hidden = true;
+    loggedIn.hidden = false;
+    setBusy(loginBtn, false);
+    pageNote.textContent = 'Loading your Pages…';
+    try {
+      var me = await graph('/me', { fields: 'name' });
+      if (sid !== session) return;
+      userName.textContent = me.name || 'Facebook user';
+
+      var res = await graph('/me/accounts', { fields: 'id,name,access_token,instagram_business_account{id,username}' });
+      if (sid !== session) return;
+      var all = Array.isArray(res.data) ? res.data : [];
+      pages = all.filter(function (p) {
+        return p && p.instagram_business_account && NUMERIC_ID_RE.test(String(p.instagram_business_account.id));
+      }).map(function (p) {
+        return {
+          id: String(p.id),
+          name: toText(p.name) || String(p.id),
+          token: typeof p.access_token === 'string' ? p.access_token : null,
+          igId: String(p.instagram_business_account.id),
+          igUsername: toText(p.instagram_business_account.username)
+        };
+      });
+      populatePages(all.length);
+    } catch (err) {
+      if (sid !== session) return;
+      pageNote.textContent = '';
+      renderError(authError, err);
+    }
+  }
+
+  function populatePages(totalReturned) {
+    clear(pageSelect);
+    pageNote.textContent = '';
+    if (!pages.length) {
+      pagePicker.hidden = true;
+      pageNote.textContent = totalReturned
+        ? 'None of the Pages you granted access to has a linked Instagram professional account.'
+        : 'No Facebook Pages were returned for your account.';
+      return;
+    }
+    if (pages.length > 1) pageSelect.appendChild(h('option', { value: '', text: 'Select a Page…' }));
+    pages.forEach(function (p) {
+      pageSelect.appendChild(h('option', { value: p.id, text: p.name + (p.igUsername ? ' (@' + p.igUsername + ')' : '') }));
+    });
+    pagePicker.hidden = false;
+    if (pages.length === 1) { pageSelect.value = pages[0].id; selectPage(pages[0].id); }
+    else pageNote.textContent = 'Select a Page to continue.';
+  }
+
+  pageSelect.addEventListener('change', function () { selectPage(pageSelect.value); });
+
+  function selectPage(id) {
+    clearAreas();
+    var p = null;
+    for (var i = 0; i < pages.length; i++) if (pages[i].id === id) p = pages[i];
+    selected = p;
+    pageToken = p ? p.token : null;
+    sectionA.hidden = !p;
+    sectionB.hidden = !p;
+    if (!p) { pageNote.textContent = 'Select a Page to continue.'; return; }
+    pageNote.textContent = 'Using Page “' + p.name + '”' + (p.igUsername ? ' with Instagram account @' + p.igUsername : '') + '.';
+  }
+
+  // ---- Insight parsing (best-effort: response shape is not documented precisely) ----
+  function metricValue(m) {
+    if (m.total_value && !isBlank(m.total_value.value)) return m.total_value.value;
+    if (Array.isArray(m.values) && m.values.length && m.values[0] && !isBlank(m.values[0].value)) return m.values[0].value;
+    if (!isBlank(m.value)) return m.value;
+    return undefined;
+  }
+  function collectInsights(root) {
+    var metrics = [], groups = [];
+    (function walk(node, metricName, depth) {
+      if (!node || typeof node !== 'object' || depth > 8) return;
+      if (Array.isArray(node)) { node.forEach(function (n) { walk(n, metricName, depth + 1); }); return; }
+      var name = typeof node.name === 'string' ? node.name : metricName;
+      if (typeof node.name === 'string') {
+        var v = metricValue(node);
+        if (v !== undefined && typeof v !== 'object') metrics.push({ name: node.name, value: v });
+      }
+      if (Array.isArray(node.results)) {
+        var rows = [];
+        node.results.forEach(function (r) {
+          if (!r || typeof r !== 'object' || isBlank(r.value)) return;
+          var label = Array.isArray(r.dimension_values) ? r.dimension_values.join(' / ') : toText(r.name || r.key || r.country || r.label);
+          if (label) rows.push({ label: label, value: r.value });
+        });
+        if (rows.length) groups.push({ metric: name || '', rows: rows });
+      }
+      Object.keys(node).forEach(function (k) { walk(node[k], name, depth + 1); });
+    })(root, '', 0);
+    return { metrics: metrics, groups: groups };
+  }
+  function metricByName(insights, name) {
+    var found = collectInsights(insights).metrics;
+    for (var i = 0; i < found.length; i++) if (found[i].name === name) return found[i].value;
+    if (insights && typeof insights === 'object' && !isBlank(insights[name]) && typeof insights[name] !== 'object') return insights[name];
+    return undefined;
+  }
+
+  // ---- Rendering helpers ----
+  function avatar(url, name, large) {
+    var wrap = h('div', { class: 'avatar' + (large ? ' large' : '') }, [String(name || '?').charAt(0).toUpperCase()]);
+    var src = safeUrl(url);
+    if (src) {
+      var img = h('img', { src: src, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer' });
+      img.addEventListener('error', function () { if (img.parentNode) img.parentNode.removeChild(img); });
+      wrap.appendChild(img);
+    }
+    return wrap;
+  }
+  function fact(dl, label, value) {
+    if (isBlank(value) || value === '') return;
+    dl.appendChild(h('dt', { text: label }));
+    dl.appendChild(h('dd', { text: value }));
+  }
+  function stat(label, value) {
+    var t = fmtNum(value);
+    return t === '' ? null : h('span', null, [label + ' ', h('b', { text: t })]);
+  }
+  function table(headers, rows) {
+    return h('div', { class: 'table-wrap' }, [h('table', null, [
+      h('thead', null, [h('tr', null, headers.map(function (t) { return h('th', { scope: 'col', text: t }); }))]),
+      h('tbody', null, rows.map(function (r) { return h('tr', null, r.map(function (c) { return h('td', null, [c]); })); }))
+    ])]);
+  }
+  function rawDetails(obj) {
+    return h('details', null, [h('summary', { text: 'Raw API response (JSON)' }), h('pre', { text: prettyJson(obj) })]);
+  }
+
+  // ---- Section A: Creator Marketplace ----
+  formA.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (!selected) return;
+    clearError(errorA); clear(resultsA); clear(detailA);
+    if (!pageToken) {
+      renderError(errorA, { message: 'No access token is available for the selected Page. Log out and sign in again, granting access to this Page.' });
+      return;
+    }
+    var sid = session, igId = selected.igId;
+    var params = {
+      access_token: pageToken,
+      creator_countries: JSON.stringify([$('country').value]),
+      fields: LIST_FIELDS,
+      limit: 25
+    };
+    var interest = $('interest').value;
+    var min = Number($('minFollowers').value) || 0;
+    var keyword = $('keyword').value.trim();
+    if (interest) params.creator_interests = JSON.stringify([interest]);
+    if (min > 0) params.creator_min_followers = min;
+    if (keyword) params.query = keyword;
+
+    setBusy(searchBtn, true, 'Searching…');
+    try {
+      var res = await graph('/' + igId + '/creator_marketplace_creators', params);
+      if (sid !== session) return;
+      renderCreators(res);
+    } catch (err) {
+      if (sid !== session) return;
+      renderError(errorA, err);
+    } finally {
+      setBusy(searchBtn, false);
+    }
+  });
+
+  function renderCreators(res) {
+    clear(resultsA);
+    var list = Array.isArray(res && res.data) ? res.data : [];
+    if (!list.length) {
+      resultsA.appendChild(h('p', { class: 'muted', style: 'margin-top:14px', text: 'No creators matched these filters. Try another country, interest or follower minimum.' }));
+      return;
+    }
+    resultsA.appendChild(h('p', { class: 'muted small', style: 'margin-top:14px', text: list.length + (list.length === 1 ? ' creator' : ' creators') + ' returned.' }));
+    resultsA.appendChild(h('div', { class: 'grid' }, list.map(creatorCard)));
+  }
+
+  function creatorCard(c) {
+    c = c || {};
+    var uname = typeof c.username === 'string' ? c.username : '';
+    var validUser = USERNAME_RE.test(uname);
+    var followers = metricByName(c.insights, 'total_followers');
+    var facts = h('dl', { class: 'facts' });
+    fact(facts, 'Country', toText(c.country));
+    fact(facts, 'Category', toText(c.category));
+    fact(facts, 'Onboarding', humanize(c.onboarded_status));
+    fact(facts, 'Followers', fmtNum(followers));
+    fact(facts, 'Gender', humanize(c.gender));
+    fact(facts, 'Age', toText(c.age_bucket));
+
+    var title = h('div', { class: 'card-title' }, ['@' + (uname || 'unknown'), c.is_account_verified === true ? h('span', { class: 'badge', text: 'Verified' }) : null]);
+    var card = h('article', { class: 'card' }, [
+      h('div', { class: 'card-head' }, [avatar(c.profile_picture_url, uname, false), title]),
+      facts
+    ]);
+    if (validUser) {
+      var btn = h('button', { type: 'button', class: 'secondary small', text: 'View details' });
+      btn.addEventListener('click', function () { showCreatorDetails(uname, btn); });
+      card.appendChild(btn);
+    }
+    return card;
+  }
+
+  async function showCreatorDetails(username, btn) {
+    if (!selected || !USERNAME_RE.test(username)) return;
+    if (!pageToken) {
+      renderError(errorA, { message: 'No access token is available for the selected Page. Log out and sign in again, granting access to this Page.' });
+      return;
+    }
+    clearError(errorA);
+    clear(detailA);
+    var sid = session, igId = selected.igId;
+    setBusy(btn, true, 'Loading…');
+    try {
+      var res = await graph('/' + igId + '/creator_marketplace_creators', {
+        access_token: pageToken,
+        username: username,
+        fields: DETAIL_FIELDS
+      });
+      if (sid !== session) return;
+      renderDetails(username, res);
+    } catch (err) {
+      if (sid !== session) return;
+      clear(detailA);
+      detailA.appendChild(errorBox(err));
+      detailA.scrollIntoView({ block: 'nearest' });
+    } finally {
+      setBusy(btn, false);
+    }
+  }
+
+  function renderDetails(username, res) {
+    clear(detailA);
+    var rec = Array.isArray(res && res.data) ? res.data[0] : res;
+    var panel = h('div', { class: 'detail' }, [h('h3', { text: 'Creator details: @' + username })]);
+
+    if (!rec || typeof rec !== 'object') {
+      panel.appendChild(h('p', { class: 'muted', text: 'No details were returned for this creator.' }));
+      panel.appendChild(rawDetails(res));
+      detailA.appendChild(panel);
+      return;
+    }
+
+    // Brand partnership experience + past partners
+    var exp = rec.has_brand_partnership_experience;
+    panel.appendChild(h('p', null, ['Brand partnership experience: ', h('strong', { text: exp === true ? 'Yes' : exp === false ? 'No' : 'Not reported' })]));
+    var partners = asList(rec.past_brand_partnership_partners).map(toText).filter(Boolean);
+    panel.appendChild(h('h3', { text: 'Past brand partners' }));
+    panel.appendChild(partners.length
+      ? h('ul', null, partners.map(function (p) { return h('li', { text: p }); }))
+      : h('p', { class: 'muted', text: 'No past brand partners were returned.' }));
+
+    // Insights: summary metrics + top audience countries (best effort)
+    var ins = collectInsights(rec.insights);
+    var seen = {}, metricRows = [];
+    ins.metrics.forEach(function (m) {
+      if (seen[m.name]) return;
+      seen[m.name] = true;
+      metricRows.push([humanize(m.name), fmtNum(m.value)]);
+    });
+    panel.appendChild(h('h3', { text: 'Insights (this month)' }));
+    panel.appendChild(metricRows.length
+      ? table(['Metric', 'Value'], metricRows)
+      : h('p', { class: 'muted', text: 'No summary metrics were found in the response.' }));
+
+    panel.appendChild(h('h3', { text: 'Top audience countries' }));
+    if (ins.groups.length) {
+      ins.groups.forEach(function (g) {
+        if (ins.groups.length > 1 && g.metric) panel.appendChild(h('p', { class: 'muted small', text: humanize(g.metric) }));
+        panel.appendChild(table(['Country', 'Value'], g.rows.map(function (r) { return [countryName(r.label), fmtNum(r.value)]; })));
+      });
+    } else {
+      panel.appendChild(h('p', { class: 'muted', text: 'No audience country breakdown was found in the response.' }));
+    }
+
+    // Branded content media
+    var media = asList(rec.branded_content_media).filter(function (m) { return m && typeof m === 'object'; });
+    panel.appendChild(h('h3', { text: 'Branded content media' }));
+    panel.appendChild(media.length
+      ? table(['Date', 'Brand', 'Likes', 'Comments', 'Views', 'Link'], media.map(function (m) {
+          return [fmtDate(m.creation_time), toText(m.tagged_brand), fmtNum(m.likes), fmtNum(m.comments), fmtNum(m.views), extLink(m.permalink, 'Open')];
+        }))
+      : h('p', { class: 'muted', text: 'No branded content media was returned.' }));
+
+    panel.appendChild(rawDetails(res));
+    detailA.appendChild(panel);
+    detailA.scrollIntoView({ block: 'nearest' });
+  }
+
+  // ---- Section B: Business Discovery ----
+  formB.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (!selected) return;
+    clearError(errorB); clear(resultsB);
+    var u = normalizeUsername(lookupUser.value);
+    if (!u) {
+      renderError(errorB, { message: 'Enter a valid Instagram username: letters, numbers, periods and underscores, up to 30 characters.' });
+      return;
+    }
+    var sid = session, igId = selected.igId;
+    var fields = 'business_discovery.username(' + u + '){username,name,biography,followers_count,media_count,profile_picture_url,media.limit(12){' + MEDIA_FIELDS + '}}';
+    setBusy(lookupBtn, true, 'Looking up…');
+    try {
+      var res = await graph('/' + igId, { fields: fields });   // logged-in user token (no access_token override)
+      if (sid !== session) return;
+      renderProfile(res && res.business_discovery);
+    } catch (err) {
+      if (sid !== session) return;
+      renderError(errorB, err);
+    } finally {
+      setBusy(lookupBtn, false);
+    }
+  });
+
+  function renderProfile(bd) {
+    clear(resultsB);
+    if (!bd || typeof bd !== 'object') {
+      resultsB.appendChild(h('p', { class: 'muted', style: 'margin-top:14px', text: 'No profile was returned.' }));
+      return;
+    }
+    var uname = toText(bd.username);
+    var stats = h('div', { class: 'stats' }, [stat('Followers', bd.followers_count), stat('Posts', bd.media_count)]);
+    resultsB.appendChild(h('div', { class: 'profile' }, [
+      avatar(bd.profile_picture_url, uname, true),
+      h('div', { class: 'profile-body' }, [
+        h('div', { class: 'card-title', text: toText(bd.name) || ('@' + uname) }),
+        h('div', { class: 'muted small', text: '@' + uname }),
+        stats,
+        isBlank(bd.biography) ? null : h('p', { class: 'bio', text: toText(bd.biography) })
+      ])
+    ]));
+
+    var posts = asList(bd.media).filter(function (m) { return m && typeof m === 'object'; });
+    resultsB.appendChild(h('h3', { text: 'Latest posts' }));
+    if (!posts.length) {
+      resultsB.appendChild(h('p', { class: 'muted', text: 'No public posts were returned.' }));
+      return;
+    }
+    resultsB.appendChild(h('div', { class: 'grid' }, posts.map(postCard)));
+  }
+
+  function postCard(m) {
+    var types = [];
+    [m.media_product_type, m.media_type].forEach(function (t) {
+      var s = toText(t);
+      if (s && types.indexOf(s) === -1) types.push(s);
+    });
+    var stats = h('div', { class: 'stats' }, [stat('Likes', m.like_count), stat('Comments', m.comments_count), stat('Views', m.view_count)]);
+    var cap = excerpt(m.caption, 140);
+    return h('article', { class: 'card' }, [
+      h('div', { class: 'row' }, [
+        h('strong', { class: 'card-title', text: fmtDate(m.timestamp) || 'Date unavailable' }),
+        types.length ? h('span', { class: 'badge neutral', text: types.map(humanize).join(' · ') }) : null
+      ]),
+      stats,
+      h('p', { class: 'caption', text: cap || 'No caption.' }),
+      h('div', { class: 'small' }, [extLink(m.permalink, 'View on Instagram')])
+    ]);
+  }
+})();
+</script>
+</body>
+</html>
